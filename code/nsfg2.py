@@ -27,8 +27,8 @@ def MakeFrames():
     return live, firsts, others
 
 
-def ReadFemPreg(dct_file='2006_2010_FemPregSetup.dct',
-                dat_file='2006_2010_FemPreg.dat.gz'):
+def ReadFemPreg(dct_file='E://GitHub/ThinkStats2/code/2006_2010_FemPregSetup.dct',
+                dat_file='E://GitHub/ThinkStats2/code/2006_2010_FemPreg.dat.gz'):
     """Reads the NSFG 2006-2010 pregnancy data.
 
     dct_file: string file name
