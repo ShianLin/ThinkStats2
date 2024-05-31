@@ -12,8 +12,8 @@ import thinkstats2
 from collections import defaultdict
 
 
-def ReadFemResp(dct_file='E://GitHub/ThinkStats2/code/2002FemResp.dct',
-                dat_file='E://GitHub/ThinkStats2/code/2002FemResp.dat.gz',
+def ReadFemResp(dct_file='./code/2002FemResp.dct',
+                dat_file='code/2002FemResp.dat.gz',#E://GitHub/ThinkStats2/
                 nrows=None):
     """Reads the NSFG respondent data.
 
@@ -36,8 +36,8 @@ def CleanFemResp(df):
     pass
 
 
-def ReadFemPreg(dct_file='E://GitHub/ThinkStats2/code/2002FemPreg.dct',
-                dat_file='E://GitHub/ThinkStats2/code/2002FemPreg.dat.gz'):
+def ReadFemPreg(dct_file='code/2002FemPreg.dct',
+                dat_file='code/2002FemPreg.dat.gz'):
     """Reads the NSFG pregnancy data.
 
     dct_file: string file name
