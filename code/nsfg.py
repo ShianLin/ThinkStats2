@@ -52,8 +52,9 @@ def ReadFemPreg(dct_file='2002FemPreg.dct',#code/
 
 
 def CleanFemPreg(df):
-    """Recodes variables from the pregnancy frame.
-
+    """
+    Recodes variables from the pregnancy frame.
+    A function that cleans the variables I am planning to use
     df: DataFrame
     """
     # mother's age is encoded in centiyears; convert to years
@@ -61,7 +62,7 @@ def CleanFemPreg(df):
 
     # birthwgt_lb contains at least one bogus value (51 lbs)
     # replace with NaN
-    df.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan
+    df.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan#replaces invalid values with np.nan
     
     # replace 'not ascertained', 'refused', 'don't know' with NaN
     na_vals = [97, 98, 99]
@@ -109,15 +110,14 @@ def ValidatePregnum(resp, preg):
 def MakePregMap(df):
     """Make a map from caseid to list of preg indices.
 
-    df: DataFrame
-
+    df : the DataFrame with pregnancy data
+    The iteritems method enumerates the index (row number) and caseid for each pregnancy.
     returns: dict that maps from caseid to list of indices into `preg`
     """
     d = defaultdict(list)
-    for index, caseid in df.caseid.items():
-        d[caseid].append(index)
+    for index, caseid in df.caseid.iteritems():
+        d[caseid].append(index)#where this caseid be mentioned
     return d
-
 
 def main():
     """Tests the functions in this module.
@@ -132,7 +132,7 @@ def main():
 
     # read and validate the pregnancy file
     preg = ReadFemPreg()
-    print(preg.shape)
+    #print(preg.shape)
 
     assert len(preg) == 13593
     assert preg.caseid[13592] == 12571
